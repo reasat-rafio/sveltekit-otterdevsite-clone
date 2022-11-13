@@ -38,3 +38,24 @@ export interface SanityAssetProps {
   extension?: string;
   [key: string]: any;
 }
+export interface HeroProps {
+  _key: string;
+  _type: string;
+  awards: null;
+  clients: null;
+  heading: any[];
+  items: null;
+  navItem: NavItem;
+  service: null;
+  tagline: any[];
+  video: Video;
+}
+
+export interface NavItem {
+  _type: string;
+}
+
+export interface Video {
+  hevc: string;
+  webm: string;
+}

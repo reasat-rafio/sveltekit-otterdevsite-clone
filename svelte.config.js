@@ -11,6 +11,11 @@ const config = {
       postcss: true,
     }),
   ],
+  vite: {
+    optimizeDeps: {
+      include: ["svelte-intersection-observe"],
+    },
+  },
 };
 
 export default config;

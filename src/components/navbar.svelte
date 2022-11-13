@@ -2,9 +2,10 @@
   import { fade } from "svelte/transition";
   import type { SiteProps } from "$lib/types";
   import SanityImage from "./sanity-image.svelte";
-
   export let navData: SiteProps["data"];
+
   let visible = false;
+  let y: number;
 
   const onMenuItemHoverAction = (submenu: boolean) => {
     if (submenu) visible = true;
@@ -12,8 +13,11 @@
   };
 </script>
 
+<svelte:window bind:scrollY={y} />
 <nav
-  class=" mx-auto | p-5 | bg-white/20 | sticky top-0 left-0 | backdrop-blur-md"
+  class="z-50 mx-auto | px-5 | bg-white/20 | sticky top-0 left-0 | backdrop-blur-md | transition-all duration-300 ease-in-out {y
+    ? 'py-5 shadow-lg'
+    : 'py-10'}"
 >
   <div class="relative | flex items-center container mx-auto">
     <a class="flex-1" href="/">
@@ -26,7 +30,7 @@
       </figure>
     </a>
 
-    <ul class="flex space-x-8">
+    <ul class=" lg:space-x-8 space-x-4 sm:flex hidden">
       {#each navData.menu as { title, slug, submenu, highlight }}
         <li class="font-semibold text-base">
           {#if highlight}

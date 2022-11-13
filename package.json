@@ -32,6 +32,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sanity/client": "^3.4.1",
-		"groq": "^2.33.2"
+		"groq": "^2.33.2",
+		"svelte-intersection-observer": "^0.10.0"
 	}
 }
