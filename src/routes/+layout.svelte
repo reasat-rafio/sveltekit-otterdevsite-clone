@@ -1,13 +1,14 @@
-<script>
-  export let data;
+<script lang="ts">
+  import "../app.css";
+  import type { SiteProps } from "$lib/types";
+  import Navbar from "../components/navbar.svelte";
 
-  console.log("====================================");
-  console.log(data);
-  console.log("====================================");
+  export let data: SiteProps;
+  const { data: navData } = data;
 </script>
 
 <main>
-  <nav>test</nav>
+  <Navbar {navData} />
 
   <slot />
 </main>
