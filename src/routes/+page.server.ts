@@ -1,10 +1,30 @@
-import { pageQuery } from "$lib/query";
 import { client } from "$lib/sanity";
 import { error } from "@sveltejs/kit";
+import groq from "groq";
 
-const query = `*[_id == "site"][0]`;
+const query = groq`
+    *[_id == "landingPage"][0] {
+      ...,
+      sections[] {
+        ...,
+        "service": service->title,
+        "video": video {
+          "webm": video_webm.asset->url,
+          "hevc": video_hevc.asset->url
+        },
+        awards[]-> {
+          ...,
+        },
+        clients[]-> {
+          ...,
+        },
+        items[]-> {
+          ...,
+        },
+      }
+    }`;
 
-export async function load() {
+export const load = async () => {
   const data = await client.fetch(query);
 
   if (!data) {
@@ -14,9 +34,6 @@ export async function load() {
   }
 
   return {
-    status: 200,
-    body: {
-      data,
-    },
+    data,
   };
-}
+};

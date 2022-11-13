@@ -11,6 +11,8 @@
 		"lint": "eslint ."
 	},
 	"devDependencies": {
+		"@portabletext/svelte": "^1.0.1",
+		"@sanity/image-url": "^1.0.1",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",

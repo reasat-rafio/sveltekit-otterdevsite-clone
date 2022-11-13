@@ -10,8 +10,5 @@ export const client = sanityClient({
   dataset: SANITY_DATASET,
   useCdn: false,
   token: SANITY_API_TOKEN,
-  //   projectId: process.env.SANITY_PROJECT_ID,
-  //   dataset: process.env.SANITY_DATASET,
-  //   useCdn: process.env.NODE_ENV === "production",
-  //   token: process.env.SANITY_API_TOKEN,
+  apiVersion: "2021-08-31",
 });
