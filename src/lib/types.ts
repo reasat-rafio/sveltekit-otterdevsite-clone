@@ -10,9 +10,16 @@ export interface Data {
   _updatedAt: Date;
   logo: SanityAssetProps;
   logo2: SanityAssetProps;
-  //   menu: Menu[];
+  menu: MenuItem[];
   ogImage: SanityAssetProps;
   siteUrl: string;
+}
+
+export interface MenuItem {
+  title: string;
+  slug: { current: string };
+  highlight: boolean;
+  submenu?: MenuItem[];
 }
 
 export interface IGetImage {

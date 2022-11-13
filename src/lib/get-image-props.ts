@@ -1,11 +1,10 @@
-import { SANITY_DATASET, SANITY_PROJECT_ID } from "$env/static/private";
 import imageUrlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "./get-image-dimensions";
 import type { IGetImage } from "./types";
 
 export const imageBuilder = imageUrlBuilder({
-  projectId: SANITY_PROJECT_ID,
-  dataset: SANITY_DATASET,
+  projectId: "kbz1tcxy",
+  dataset: "production",
 });
 
 const LARGEST_VIEWPORT = 1920;
